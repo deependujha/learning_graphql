@@ -27,6 +27,21 @@ const resolvers = {
 			return users.find((ur) => ur.id == qt.by).lastName;
 		},
 	},
+
+	Mutation: {
+		signUpDummyUser: (_, { firstName, lastName, email, password }) => {
+			const id = Math.floor(Math.random() * 1000 + 1).toString();
+			// console.log(id);
+			users.push({ id, firstName, lastName, email, password });
+			return users.find((ur) => ur.id == id);
+		},
+		signUpDummyUserBetter: (_, { newUser }) => {
+			const id = Math.floor(Math.random() * 1000 + 1).toString();
+			// console.log(id);
+			users.push({ id, ...newUser });
+			return users.find((ur) => ur.id == id);
+		},
+	},
 };
 
 export default resolvers;

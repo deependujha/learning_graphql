@@ -1,4 +1,4 @@
-import { gql } from "apollo-server";
+import { gql } from 'apollo-server';
 
 const typeDefs = gql`
 	#graphql
@@ -7,6 +7,15 @@ const typeDefs = gql`
 		quotes: [Quote]
 		user(id: ID!): User
 		iQuote(by: ID!): [Quote]
+	}
+	type Mutation {
+		signUpDummyUser(
+			firstName: String!
+			lastName: String!
+			email: String!
+			password: String!
+		): User
+		signUpDummyUserBetter(newUser: createUser!): User
 	}
 
 	type User {
@@ -23,6 +32,13 @@ const typeDefs = gql`
 		firstName: String
 		lastName: String
 	}
+
+	input createUser {
+		firstName: String
+		lastName: String
+		email: String
+		password: String
+	}
 `;
 
-export default typeDefs
+export default typeDefs;

@@ -75,3 +75,24 @@ query getUserByID($userId : ID!){
 }
 ---------------------------------------
 
+####  Query  ####
+mutation signUpDummyUserBetter($newUser: createUser!) {
+  signUpDummyUserBetter(
+    newUser:$newUser
+  ) {
+    firstName
+    lastName
+    email
+  }
+}
+
+####  Query Variables  ####
+{
+  "newUser": {
+    "firstName": "alpha",
+    "lastName": "beta",
+    "email": "alphabeta@gmail.com",
+    "password": "faojfao"
+  }
+}
+---------------------------------------
