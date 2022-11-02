@@ -1,5 +1,6 @@
 import { ApolloServer, gql } from 'apollo-server';
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
+import './mongodb/conn.js';
 
 // here we are defining our 'GraphQL schemas'
 const typeDefs = gql`
