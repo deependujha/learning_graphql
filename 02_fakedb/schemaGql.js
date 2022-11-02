@@ -19,7 +19,7 @@ const typeDefs = gql`
 	}
 
 	type User {
-		id: ID
+		id: ID #graphql special variable type for storing Unique Ids
 		firstName: String
 		lastName: String
 		email: String
