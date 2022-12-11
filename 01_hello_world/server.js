@@ -5,6 +5,7 @@ const typeDefs = gql`
 	type Query {
 		greet: String
 		bye: String
+		fighting: Boolean
 	}
 `;
 
@@ -16,6 +17,9 @@ const resolvers = {
 		bye: () => {
 			return 'bye bye! Happy learning.';
 		},
+		fighting: ()=>{
+			return true;
+		}
 	},
 };
 
